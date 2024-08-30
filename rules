@@ -10,3 +10,6 @@ libdir      = $(exec_prefix)/lib/$(DEB_HOST_MULTIARCH)
 
 %:
 	dh $@
+
+override_dh_auto_configure:
+	bash build aarch64-linux-gnu baseline
