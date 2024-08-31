@@ -113,9 +113,6 @@ cmake "$ROOTDIR/llvm" \
   -DCMAKE_C_COMPILER="$ZIG;cc;-fno-sanitize=all;-s;-target;$TARGET;-mcpu=$MCPU" \
   -DCMAKE_CXX_COMPILER="$ZIG;c++;-fno-sanitize=all;-s;-target;$TARGET;-mcpu=$MCPU" \
   -DCMAKE_ASM_COMPILER="$ZIG;cc;-fno-sanitize=all;-s;-target;$TARGET;-mcpu=$MCPU" \
-  -DCMAKE_RC_COMPILER="$ROOTDIR/out/host/bin/llvm-rc" \
-  -DCMAKE_AR="$ROOTDIR/out/host/bin/llvm-ar" \
-  -DCMAKE_RANLIB="$ROOTDIR/out/host/bin/llvm-ranlib" \
   -DLLVM_ENABLE_BACKTRACES=OFF \
   -DLLVM_ENABLE_BINDINGS=OFF \
   -DLLVM_ENABLE_CRASH_OVERRIDES=OFF \
@@ -134,7 +131,6 @@ cmake "$ROOTDIR/llvm" \
   -DLLVM_ENABLE_ZLIB=FORCE_ON \
   -DLLVM_ENABLE_ZSTD=FORCE_ON \
   -DLLVM_USE_STATIC_ZSTD=ON \
-  -DLLVM_TABLEGEN="$ROOTDIR/out/host/bin/llvm-tblgen" \
   -DLLVM_BUILD_UTILS=OFF \
   -GNinja
   -DLLVM_BUILD_TOOLS=OFF \
@@ -149,7 +145,6 @@ cmake "$ROOTDIR/llvm" \
   -DLLVM_TOOL_LLVM_LTO_BUILD=OFF \
   -DLLVM_TOOL_LTO_BUILD=OFF \
   -DLLVM_TOOL_REMARKS_SHLIB_BUILD=OFF \
-  -DCLANG_TABLEGEN="$ROOTDIR/out/build-llvm-host/bin/clang-tblgen" \
   -DCLANG_BUILD_TOOLS=OFF \
   -DCLANG_INCLUDE_DOCS=OFF \
   -DCLANG_INCLUDE_TESTS=OFF \
