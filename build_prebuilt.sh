@@ -25,6 +25,7 @@ esac
 wget https://apt.llvm.org/llvm.sh
 chmod +x llvm.sh
 sudo ./llvm.sh 18 all
+sudo apt install liblld-18-dev -y
 # Now we build Zig, still with system C/C++ compiler, linking against LLVM,
 # Clang, LLD we just built from source.
 mkdir -p "$ROOTDIR/out/build-zig-host"
