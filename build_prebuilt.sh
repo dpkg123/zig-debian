@@ -29,6 +29,7 @@ sudo apt install liblld-18-dev -y
 # Now we build Zig, still with system C/C++ compiler, linking against LLVM,
 # Clang, LLD we just built from source.
 mkdir -p "$ROOTDIR/out/build-zig-host"
+mkdir -p "$ROOTDIR/out/host"
 cd "$ROOTDIR/out/build-zig-host"
 cmake "$ROOTDIR/zig" \
   -DCMAKE_INSTALL_PREFIX="$ROOTDIR/out/host" \
