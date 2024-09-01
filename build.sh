@@ -22,6 +22,9 @@ case $TARGET_OS_CMAKE in
 esac
 
 # First build the libraries for Zig to link against, as well as native `llvm-tblgen`.
+wget https://apt.llvm.org/llvm.sh
+chmod +x llvm.sh
+sudo ./llvm.sh 18 all
 mkdir -p "$ROOTDIR/out/build-llvm-host"
 cd "$ROOTDIR/out/build-llvm-host"
 cmake "$ROOTDIR/llvm" \
