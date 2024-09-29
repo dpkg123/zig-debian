@@ -30,9 +30,7 @@ sudo apt install liblld-18-dev -y
 # Clang, LLD we just built from source.
 mkdir -p "$ROOTDIR/out/build-zig-host"
 mkdir -p "$ROOTDIR/out/host"
-rm -rf "$ROOTDIR/zig"
-git clone https://github.com/ziglang/zig --depth=1 "$ROOTDIR/zig"
-rm -rf "$ROOTDIR/zig/.git*"
+
 cd "$ROOTDIR/out/build-zig-host"
 cmake "$ROOTDIR/zig" \
   -DCMAKE_INSTALL_PREFIX="$ROOTDIR/out/host" \
